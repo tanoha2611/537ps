@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #define NO_PID -1
+#define PID_ERR 0
 
 int processOpts(int argc, char *argv[], int optArray[]) {
 
@@ -11,28 +12,28 @@ int processOpts(int argc, char *argv[], int optArray[]) {
     pid = NO_PID;
 
     while ((opt = getopt(argc, argv, "p:sUSvc")) != -1) {
-	    switch (opt) {
-	    case 'p':
+	switch (opt) {
+        case 'p':
             optArray[0] = 1;
-	        pid = atoi(optarg);
+            pid = atoi(optarg);
             break;
-	    case 's':
+	case 's':
             optArray[1] = 1;
             break;
-	    case 'U':
+	case 'U':
             optArray[2] = 1;
             break;
-	    case 'S':
+	case 'S':
             optArray[3] = 1;
             break;
-	    case 'v':
+	case 'v':
             optArray[4] = 1;
             break;
-	    case 'c':
+	case 'c':
             optArray[5] = 1;
             break;
-	    }
+	}
     }
     
-    return 1;
+    return pid;
 }
