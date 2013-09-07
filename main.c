@@ -4,6 +4,8 @@
 #define OPT_SIZE 6
 #define NO_PID -1
 #define PID_ERR 0
+#define EXIT_SUCCESS 0
+#define EXIT_FAILURE 1
 
 int main(int argc, char *argv[]) {
 
@@ -23,7 +25,7 @@ int main(int argc, char *argv[]) {
 	break;
     case PID_ERR:
 	fprintf(stderr, "%s: Invalid process id: \n ", prog);
-	break;
+	return EXIT_FAILURE;
     default:
 	printf("PID: %d\n", pid);
 	break;
@@ -37,5 +39,5 @@ int main(int argc, char *argv[]) {
 
     printf("\n");
 
-    return 1;
+    return EXIT_SUCCESS;
 }
