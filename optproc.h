@@ -23,6 +23,6 @@
  *   char *[] - array of command line arguments
  *   int [] - array to track what arguments have been passed
  *
- * Returns: 
+ * Returns: PID if one is specified, -1 indicating no PID was given
  */
 int processOpts(int, char *[], int []);
