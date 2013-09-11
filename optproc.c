@@ -10,7 +10,10 @@ int processOpts(int argc, char *argv[], int optArray[]) {
     char opt;
 
     pid = NO_PID;
-
+    
+    /* getopt() returns -1 when no more arguments are found, loop until
+     * no more options are left
+     */
     while ((opt = getopt(argc, argv, "p:sUSvc")) != -1) {
 	switch (opt) {
         case 'p':
