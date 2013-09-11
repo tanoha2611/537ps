@@ -1,6 +1,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+/* atoi() will return 0 when trying to convert non-integer values
+ * to an integer, so define a PID error as 0 and no PID specified
+ * as -1
+ */
 #define NO_PID -1
 #define PID_ERR 0
 
