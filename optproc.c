@@ -20,6 +20,7 @@ int processOpts(int argc, char *argv[], struct cliArgs *options) {
 
     char opt;
     int success;
+    char *optString;
 
     /* Assume success by default */
     success = 1;
@@ -27,10 +28,12 @@ int processOpts(int argc, char *argv[], struct cliArgs *options) {
     /* Assume no PID is given by default */
     options->pid = NO_PID;
 
+    optString = "p:sUSVc";
+
     /* getopt() returns -1 when no more arguments are found, loop until
      * no more options are left
      */
-    while ((opt = getopt(argc, argv, "p:sUSvc")) != -1) {
+    while ((opt = getopt(argc, argv, optString)) != -1) {
 	switch (opt) {
         case 'p':
 	    options->opt_pid = 1;
