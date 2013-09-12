@@ -2,7 +2,7 @@
  * Authors: Andrew Summers apsummers@wisc.edu
  *          Hai Thach      thach@wisc.edu
  * Project: Programming Assignment 1, 537ps
- * File: main.c
+ * File:    main.c
  *****************************************************************************/
 
 #include "optproc.h"

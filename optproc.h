@@ -2,10 +2,26 @@
  * Authors: Andrew Summers apsummers@wisc.edu
  *          Hai Thach      thach@wisc.edu
  * Project: Programming Assignment 1, 537ps
- * File: optproc.h
+ * File:    optproc.h
  *****************************************************************************/
 
-/*
+/******************************************************************************
+ * cliArgs defines a structure to hold the arguments passed to the program.
+ * 
+ * pid - the ID of the process. -1 indicates no PID was specified.
+ * all others - boolean flags indicating whether the option was specified
+ *****************************************************************************/
+struct cliArgs {
+    int pid;
+    int opt_pid;
+    int singleChar;
+    int userTime;
+    int sysTime;
+    int virtMem;
+    int cli;
+};
+
+/******************************************************************************
  * Process command line arguments.  The following options are available:
  *
  * -p <pid>
@@ -33,6 +49,6 @@
  *   char *[] - array of command line arguments
  *   int [] - array to track what arguments have been passed
  *
- * Returns: PID if one is specified, -1 indicating no PID was given
- */
+ * Returns: PID if one is specified, -1 indicating no PID was given, 0 if error
+ ******************************************************************************/
 int processOpts(int, char *[], int []);
