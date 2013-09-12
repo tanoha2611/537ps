@@ -25,8 +25,14 @@ int processOpts(int argc, char *argv[], struct cliArgs *options) {
     /* Assume success by default */
     success = 1;
 
-    /* Assume no PID is given by default */
+    /* Assign options defaults */
     options->pid = NO_PID;
+    options->opt_pid = 0;
+    options->singleChar = 0;
+    options->userTime = 1;
+    options->sysTime = 0;
+    options->virtMem = 0;
+    options->cli = 1;
 
     optString = "p:sUSVc";
 
