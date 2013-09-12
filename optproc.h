@@ -47,8 +47,8 @@ struct cliArgs {
  * Paramters:
  *   int - length of arguments array
  *   char *[] - array of command line arguments
- *   int [] - array to track what arguments have been passed
+ *   struct cliArgs * - pointer to arguments struct
  *
- * Returns: PID if one is specified, -1 indicating no PID was given, 0 if error
+ * Returns: 1 indicating successful processing, 0 otherwise
  ******************************************************************************/
-int processOpts(int, char *[], int []);
+int processOpts(int, char *[], struct cliArgs *);

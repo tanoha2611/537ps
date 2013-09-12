@@ -15,39 +15,38 @@
 #define NO_PID -1
 #define PID_ERR 0
 
-int processOpts(int argc, char *argv[], int optArray[]) {
+int processOpts(int argc, char *argv[], struct cliArgs *options) {
 
-    int pid;
-    char opt;
+    int success;
 
-    pid = NO_PID;
-    
+    success = 1;
+
     /* getopt() returns -1 when no more arguments are found, loop until
      * no more options are left
      */
     while ((opt = getopt(argc, argv, "p:sUSvc")) != -1) {
 	switch (opt) {
         case 'p':
-            optArray[0] = 1;
-            pid = atoi(optarg);
+	    options->opt_pid = 1;
+            options->pid = atoi(optarg);
             break;
 	case 's':
-            optArray[1] = 1;
+	    options->singleChar = 1;
             break;
 	case 'U':
-            optArray[2] = 1;
+	    options->userTime = 1;
             break;
 	case 'S':
-            optArray[3] = 1;
+	    options->sysTime = 1;
             break;
 	case 'v':
-            optArray[4] = 1;
+	    options->virtMem = 1;
             break;
 	case 'c':
-            optArray[5] = 1;
+	    options->cli = 1;
             break;
 	}
     }
     
-    return pid;
+    return success;
 }
