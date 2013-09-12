@@ -16,6 +16,7 @@ int main(int argc, char *argv[]) {
 
     char *prog;
     struct cliArgs *options;
+    int procOptSuccess;
 
     prog = argv[0];
 
