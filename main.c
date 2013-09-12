@@ -5,8 +5,8 @@
  * File:    main.c
  *****************************************************************************/
 
-#include "optproc.h"
 #include <stdio.h>
+#include "optproc.h"
 
 #define EXIT_SUCCESS 0
 #define EXIT_FAILURE 1

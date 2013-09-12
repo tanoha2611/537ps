@@ -7,6 +7,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include "optproc.h"
 
 /* atoi() will return 0 when trying to convert non-integer values
  * to an integer, so define a PID error as 0 and no PID specified
@@ -17,6 +18,7 @@
 
 int processOpts(int argc, char *argv[], struct cliArgs *options) {
 
+    char opt;
     int success;
 
     success = 1;
