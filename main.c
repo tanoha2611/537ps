@@ -18,5 +18,9 @@ int main(int argc, char *argv[]) {
 
     prog = argv[0];
 
+    options = (struct cliArgs *)malloc(sizeof(struct cliArgs));
+    if (options == NULL) {
+    
+    }
     return EXIT_SUCCESS;
 }
