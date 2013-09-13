@@ -9,9 +9,6 @@
 #include <stdlib.h>
 #include "optproc.h"
 
-#define EXIT_SUCCESS 0
-#define EXIT_FAILURE 1
-
 int main(int argc, char *argv[]) {
 
     char *prog;
@@ -29,8 +26,10 @@ int main(int argc, char *argv[]) {
     
     procOptSuccess = processOpts(argc, argv, options);
 
-    printf("-p: %d\n", options->opt_pid);
-    printf("pid: %d\n", options->pid);
+    if (procOptSuccess != 1) {
+	fprintf(stderr, "Error: Couldn't process command line.");
+	exit(0);
+    }
 
-    return EXIT_SUCCESS;
+    return 0;
 }
